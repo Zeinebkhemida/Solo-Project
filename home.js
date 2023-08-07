@@ -6,10 +6,4 @@ let nav = document.querySelector("nav");
             nav.classList.remove("sticky");
           }
         }
-        // var image1= "1.jpg"
-        //  function bouquet()  {
-        //     document.getElementById('back').style.display='none'
-        //     document.getElementsByClassName('flr').style.display='block'
-        
-        // }
         

@@ -1,41 +1,88 @@
 var flowers=[
     {
         id:1,
-        name: "redflowers",
+        name: "RedFlowers",
         image:"1.jpg",
         price:50 ,
     },
     {
     id:2,
-    name: "multicolor",
+    name: "Multicolor",
     image:"2.jpg",
     price:70 ,
     },
     {
      id:3,
-     name: "roses",
+     name: "Roses",
     image:"3.jpg",
     price:60 ,
         },
         {
     id:4,
-    name: "purpleFlowers",
-    image:"1.jpg",
+    name: "PurpleFlowers",
+    image:"4.jpg",
      price:50 ,
-            },
-          
+            },{
+            id:5,
+            name: "WhiteFlowers",
+            image:"5.jpg",
+             price:80 ,
+        }
 
 ]
+
 function initial(){
-    var newt = document.createElement('div')
     each(flowers,function(element,index){
     
-        newt.append(` <img src='./${element.image} > <div  class='title'>${element.name}</div>  <div  class='price'>element.price</div>`)
-        
+       $ ('.image').append(`<img  src="./picture/${element.image}"  id="${element.id}" onclick="myfunction(${element.id})" class='image1'> <div  class='title'>${element.name}</div>  <div  class='price'>${element.price}$   </div>`)
     })
+}
+initial()
+var prices=[]
+
+function myfunction(id){
+    
+
+        
+          each(flowers,function(element,){
+              if(id===element.id){
+                 
+                prices.push(element)
+                
+              }
+              
+            
+          })
+          console.log('current prices',prices) 
+         
+          items=JSON.stringify(prices)
+          console.log('stringfied prices',prices) 
+          localStorage.setItem('data',items)
+    
+  
+
   
 }
 
+
+function searches(){
+    var x = $("#search").val()
+    
+each(flowers,function(element,index){
+    console.log(element.name)
+    if(x===element.name){
+    
+       
+        $ ('.image').hide()
+        $ ('.image').html(`<img  src="./picture/${element.image}"  id="${element.id}" onclick="myfunction(${element.id})" class='image1'> <div  class='title'>${element.name}</div>  <div  class='price'>${element.price}$   </div>`)
+        $ ('.image').show()
+    
+    }
+    
+    
+})
+
+}
 function each(coll, f) { 
     if (Array.isArray(coll)) { 
           for (var i = 0; i < coll.length; i++) { 
