@@ -10,7 +10,7 @@ function panier(){
         pricess.push(element.price)
   })}
   
-
+$(".panier").css('box-shadow',"rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;")
 panier()
 var sum=0
 function sums(){
@@ -22,6 +22,7 @@ function sums(){
       <h1>TOTAL:${sum}$</h1>
       
   </div>`)
+  
 }
 sums()
 
