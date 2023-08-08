@@ -69,19 +69,16 @@ function searches(){
     var x = $("#search").val()
     
 each(flowers,function(element,index){
-    console.log(element.name)
-    if(x===element.name){
-    
-       
+   
+   if( x.toLowerCase()===element.name.toLowerCase() || x*1===element.price ){
+
         $ ('.image').hide()
         $ ('.image').html(`<img  src="./picture/${element.image}"  id="${element.id}" onclick="myfunction(${element.id})" class='image1'> <div  class='title'>${element.name}</div>  <div  class='price'>${element.price}$   </div>`)
         $ ('.image').show()
-    
-    }
-    
-    
-})
 
+   } 
+    })
+   
 }
 function each(coll, f) { 
     if (Array.isArray(coll)) { 
